@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.prestamos.AbonarCuotaFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Tarjeta de información del cliente -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Título de sección -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Información del Cliente"
+                        android:fontFamily="@font/inter_bold"
+                        android:textSize="18sp"
+                        android:textColor="?attr/text_primary"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Separador -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="?attr/text_secondary"
+                        android:alpha="0.2"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Nombre -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewNombreCliente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Nombre del cliente"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Apellido -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apellido"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewApellidoCliente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Apellido del cliente"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Cédula -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cédula"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewCedulaCliente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Cédula ó ID"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tarjeta de detalles del préstamo -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Título de sección -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Detalles del Préstamo"
+                        android:fontFamily="@font/inter_bold"
+                        android:textSize="18sp"
+                        android:textColor="?attr/text_primary"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Separador -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="?attr/text_secondary"
+                        android:alpha="0.2"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Fechas -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fecha de Inicio"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewFechaInicio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Fecha inicio"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fecha Final"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewFechaFinal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Fecha final"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Monto -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monto"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewMonto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="C$ 0.00"
+                            android:textColor="@color/green"
+                            android:fontFamily="@font/inter_semibold"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Período -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Período"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewPeriodo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Período"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Número de Cuotas -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cuotas"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewNumeroCuotas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="0"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Interés -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Interés"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewInteres"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="0%"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Prenda -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Prenda"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/textViewPrenda"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Descripción"
+                            android:textColor="?attr/text_primary"
+                            android:fontFamily="@font/inter_medium"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tarjeta de abonar cuota -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Título de sección -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Abonar Cuota"
+                        android:fontFamily="@font/inter_bold"
+                        android:textSize="18sp"
+                        android:textColor="?attr/text_primary"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Separador -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="?attr/text_secondary"
+                        android:alpha="0.2"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Valor de cuota -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Valor de cuota"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/editTextAbonarCuota"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:background="@drawable/cuadro_redondeado"
+                        android:hint="C$ 0.00"
+                        android:textSize="16sp"
+                        android:textColor="@color/blue"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:fontFamily="@font/inter_medium"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Restante -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Restante"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/textViewRestante"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:background="@drawable/cuadro_redondeado"
+                        android:text="C$ 0.00"
+                        android:textColor="@color/red"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:gravity="center"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Botones de acción -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCalcular"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="Calcular"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/inter_medium"
+                            android:layout_marginEnd="8dp"
+                            app:cornerRadius="24dp"
+                            app:backgroundTint="@color/blue" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAbonarCuota"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:text="Abonar"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/inter_medium"
+                            app:cornerRadius="24dp"
+                            app:backgroundTint="@color/green" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnImprimirAbonoDeCuota"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Imprimir comprobante"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/inter_medium"
+                        app:cornerRadius="24dp"
+                        app:strokeColor="@color/blue"
+                        app:strokeWidth="1dp"
+                        app:iconTint="@color/blue"
+                        app:iconGravity="textStart" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tarjeta de historial de cuotas -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Título de sección -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Historial de Cuotas"
+                        android:fontFamily="@font/inter_bold"
+                        android:textSize="18sp"
+                        android:textColor="?attr/text_primary"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Separador -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="?attr/text_secondary"
+                        android:alpha="0.2"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- RecyclerView de historial -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewHistorialCuotas"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:clipToPadding="false" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

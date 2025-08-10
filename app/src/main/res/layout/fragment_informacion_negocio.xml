@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.configuracion.InformacionNegocioFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Encabezado con título y foto de perfil -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/textViewTituloInformacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/inter_bold"
+                android:text="Información del Negocio"
+                android:textColor="?attr/text_primary"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <!-- Sección de Foto de Perfil -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="8dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageViewFotoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_user"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="@color/blue" />
+
+                <ImageView
+                    android:id="@+id/btnCambiarFoto"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/circle_background_blue"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_camera"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cambiar foto de perfil"
+                android:textColor="@color/blue"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Sección de Datos de Negocio -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="DATOS DEL NEGOCIO"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Nombre y Sitio Web -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Nombre de la Empresa -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Nombre de la empresa"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextNombreEmpresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="Nombre"
+                        android:inputType="text"
+                        android:minWidth="180dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Dirección del Negocio -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Dirección"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextDireccionNegocio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="Dirección"
+                        android:inputType="textPostalAddress"
+                        android:minWidth="180dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Sitio Web -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Sitio web"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextSitioWeb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="www.ejemplo.com"
+                        android:inputType="textUri"
+                        android:minWidth="180dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sección de Datos del Usuario -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="DATOS DEL USUARIO"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Nombre, Apellido, Teléfono y Correo -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Nombre de Usuario -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Nombre"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextNombreUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="Nombre"
+                        android:inputType="text"
+                        android:minWidth="150dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Apellido de Usuario -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Apellido"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextApellidoUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="Apellido"
+                        android:inputType="text"
+                        android:minWidth="150dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Teléfono -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Teléfono"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextTelefonoUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="0000 0000"
+                        android:inputType="phone"
+                        android:minWidth="150dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Correo Electrónico -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Correo"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextCorreoUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="correo@ejemplo.com"
+                        android:inputType="textEmailAddress"
+                        android:minWidth="180dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón de Guardar al final -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/inter_medium"
+            android:text="Guardar Información"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+</ScrollView>

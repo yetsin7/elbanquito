@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.acercade.AcercaDeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Logo de la aplicación -->
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/circulo_azul"
+                android:padding="24dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_loan"
+                app:tint="@color/white" />
+
+            <!-- Título de la aplicación -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="El Banquito"
+                android:gravity="center"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="?attr/text_primary"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Versión de la aplicación -->
+            <TextView
+                android:id="@+id/textViewVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Versión 1.0.0"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="?attr/text_secondary"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Tarjeta con descripción -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Título de sección -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Acerca de esta aplicación"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="20sp"
+                        android:textColor="?attr/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Información de la aplicación -->
+                    <TextView
+                        android:id="@+id/text_AcercaDe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewStart"
+                        android:textSize="16sp"
+                        android:lineSpacingExtra="8dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="?attr/text_primary"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tarjeta de contacto -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Título de sección -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contacto"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="20sp"
+                        android:textColor="?attr/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Email -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_correo"
+                            app:tint="@color/blue"
+                            android:layout_marginEnd="16dp"/>
+
+                        <TextView
+                            android:id="@+id/textViewEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="soporte@elbanquito.com"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="?attr/text_primary"/>
+                    </LinearLayout>
+
+                    <!-- Sitio web -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_address"
+                            app:tint="@color/blue"
+                            android:layout_marginEnd="16dp"/>
+
+                        <TextView
+                            android:id="@+id/textViewWeb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="www.elbanquito.com"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="?attr/text_primary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Copyright -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="© 2025 El Banquito. Todos los derechos reservados."
+                android:gravity="center"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="?attr/text_secondary"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

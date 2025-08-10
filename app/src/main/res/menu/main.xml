@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_nuevo_cliente"
+        android:orderInCategory="100"
+        android:title="@string/action_nuevo_cliente"
+        android:icon="@drawable/ic_client"
+        app:iconTint="?attr/text_primary"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_nuevo_prestamo"
+        android:orderInCategory="101"
+        android:title="@string/action_nuevo_prestamo"
+        android:icon="@drawable/ic_loan"
+        app:iconTint="?attr/text_primary"
+        app:showAsAction="ifRoom" />
+</menu>

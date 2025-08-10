@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="?attr/card_background"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Vista compacta (siempre visible) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="12dp">
+
+            <!-- Avatar e Iniciales -->
+            <View
+                android:id="@+id/clientAvatar"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/circulo_azul"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/clientNameLayout" />
+
+            <TextView
+                android:id="@+id/textViewIniciales"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:text="JP"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="@+id/clientAvatar"
+                app:layout_constraintTop_toTopOf="@+id/clientAvatar"
+                app:layout_constraintBottom_toBottomOf="@+id/clientAvatar" />
+
+            <!-- Nombre y Apellido -->
+            <LinearLayout
+                android:id="@+id/clientNameLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@+id/clientAvatar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/starLayout">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewNombreCliente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Juan"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/inter_bold" />
+
+                    <TextView
+                        android:id="@+id/textViewApellidoCliente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="Pérez"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/inter_bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewTipoCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cliente regular"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Sistema de estrellas a la derecha -->
+            <LinearLayout
+                android:id="@+id/starLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/clientNameLayout">
+
+                <ImageView
+                    android:id="@+id/star1"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="2dp"
+                    android:src="@drawable/ic_star_filled"
+                    android:contentDescription="Estrella 1" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="2dp"
+                    android:src="@drawable/ic_star_filled"
+                    android:contentDescription="Estrella 2" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="2dp"
+                    android:src="@drawable/ic_star_filled"
+                    android:contentDescription="Estrella 3" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="2dp"
+                    android:src="@drawable/ic_star_empty"
+                    android:contentDescription="Estrella 4" />
+
+                <ImageView
+                    android:id="@+id/star5"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="2dp"
+                    android:src="@drawable/ic_star_empty"
+                    android:contentDescription="Estrella 5" />
+            </LinearLayout>
+
+            <!-- Botón para expandir/colapsar -->
+            <ImageView
+                android:id="@+id/btnExpandCollapse"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_chevron_down"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/starLayout"
+                app:tint="?attr/text_secondary" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Detalles expandibles (inicialmente ocultos) -->
+        <LinearLayout
+            android:id="@+id/expandableDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="gone"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Línea divisoria -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/divider_color"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Información personal en formato compacto -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Columna izquierda -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Cédula -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cédula:"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_medium"/>
+
+                        <TextView
+                            android:id="@+id/textViewCedulaCliente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="163-020592-0013H"
+                            android:textColor="?attr/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_semibold"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <!-- Dirección -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dirección:"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_medium"/>
+
+                        <TextView
+                            android:id="@+id/textViewDireccionCliente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Managua, Nicaragua"
+                            android:textColor="?attr/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_semibold"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Columna derecha -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <!-- Teléfono -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teléfono:"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_medium"/>
+
+                        <TextView
+                            android:id="@+id/textViewTelefonoCliente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234 5678"
+                            android:textColor="?attr/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_semibold"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <!-- Préstamos activos -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Préstamos:"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_medium"/>
+
+                        <TextView
+                            android:id="@+id/textViewPrestamosActivos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/blue"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Botones de acción alineados a la derecha -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNuevoPrestamo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="PRESTAR"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/inter_bold"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.03"
+                    android:paddingHorizontal="16dp"
+                    app:cornerRadius="24dp"
+                    app:backgroundTint="@color/green"
+                    app:iconTint="@color/white"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="16dp"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEditar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="EDITAR"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/inter_bold"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.03"
+                    android:paddingHorizontal="16dp"
+                    app:cornerRadius="24dp"
+                    app:backgroundTint="@color/blue"
+                    app:icon="@drawable/ic_edit"
+                    app:iconTint="@color/white"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="16dp"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEliminar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:cornerRadius="24dp"
+                    app:backgroundTint="@color/red"
+                    app:icon="@drawable/ic_delete"
+                    app:iconTint="@color/white"
+                    app:iconSize="20dp"
+                    app:iconPadding="0dp"
+                    android:contentDescription="Eliminar cliente"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

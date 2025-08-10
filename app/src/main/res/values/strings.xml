@@ -1,0 +1,95 @@
+<resources>
+    <!-- Nombre de la aplicación -->
+    <string name="app_name">El Banquito</string>
+
+    <!-- Navegación -->
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+    <string name="nav_header_title">Usuario</string>
+    <string name="nav_header_subtitle">correousuario@gmail.com</string>
+    <string name="nav_header_desc">Encabezado de navegación</string>
+
+    <!-- Información del negocio -->
+    <string name="informacion_del_negocio">Información del negocio</string>
+
+    <!-- Acciones en la barra superior -->
+    <string name="action_nuevo_cliente">Nuevo cliente</string>
+    <string name="action_nuevo_prestamo">Nuevo préstamo</string>
+
+
+
+
+    <!-- Opciones del menú principal -->
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_gallery">Galería</string>
+    <string name="menu_slideshow">Presentación</string>
+    <string name="menu_clientes">Clientes</string>
+    <string name="menu_prestamos">Préstamos</string>
+    <string name="menu_cobros">Cobros</string>
+    <string name="menu_contratos">Contratos</string>
+    <string name="menu_usuarios">Usuarios</string>
+    <string name="menu_configuracion">Configuración</string>
+    <string name="menu_acerca_de">Acerca de</string>
+    <string name="menu_eliminar_base_datos">Eliminar base de datos</string>
+    <string name="menu_iniciar_sesion">Iniciar sesión</string>
+    <string name="menu_compartir">Compartir</string>
+
+    <!-- Iconos de búsqueda -->
+    <string name="icon_buscar_prestamo">Buscar préstamo</string>
+    <string name="icon_buscar_cliente">Buscar cliente</string>
+    <string name="icon_buscar_cobros">Buscar cobros</string>
+    <string name="buscar_contratos">Buscar contratos</string>
+    <string name="estado_acciones">estadoAcciones</string>
+
+    <!-- Pantalla de configuración: títulos de secciones -->
+    <string name="titulo_perfil_negocio">PERFIL Y NEGOCIO</string>
+    <string name="titulo_notificaciones">NOTIFICACIONES</string>
+    <string name="titulo_respaldo">RESPALDO Y SEGURIDAD</string>
+    <string name="titulo_apariencia">APARIENCIA</string>
+    <string name="titulo_acerca_de">ACERCA DE</string>
+
+    <!-- Pantalla de configuración: opciones -->
+    <string name="opcion_info_negocio">Información de Negocio</string>
+    <string name="opcion_notificaciones">Notificaciones</string>
+    <string name="opcion_copia_seguridad">Copia de Seguridad</string>
+    <string name="opcion_tema">Tema</string>
+    <string name="opcion_version">Versión de la aplicación</string>
+
+    <!-- Pantalla de configuración: botones y acciones -->
+    <string name="boton_realizar">Realizar</string>
+    <string name="texto_ultima_copia">Última copia: %1$s</string>
+    <string name="texto_nunca">Nunca</string>
+    <string name="version_app">El Banquito v%1$s</string>
+
+    <!-- Mensajes de confirmación y error -->
+    <string name="confirmacion_copia">Copia de seguridad creada con éxito</string>
+    <string name="error_copia">Error al crear la copia de seguridad</string>
+    <string name="confirmacion_eliminar_bd">¡Se eliminarán todos los datos de la aplicación! ¿Desea continuar?</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="bd_eliminada">Base de datos eliminada correctamente</string>
+    <string name="error_eliminar_bd">Error al eliminar la base de datos</string>
+    <string name="bd_no_existe">La base de datos no existe</string>
+
+    <!-- Notificaciones -->
+    <string name="notificacion_pagos_semana">Tienes %1$d pagos pendientes esta semana.</string>
+    <string name="notificacion_pagos_mes">Tienes %1$d pagos pendientes este mes.</string>
+    <string name="notificacion_pagos_atrasados">Tienes %1$d pagos atrasados.</string>
+
+    <!-- Estados vacíos -->
+    <string name="sin_prestamos">¡Bienvenido a El Banquito!</string>
+    <string name="comienza_prestamo">Comienza creando tu primer préstamo</string>
+    <string name="sin_clientes">No hay clientes registrados</string>
+    <string name="comienza_cliente">Comienza añadiendo un nuevo cliente</string>
+    <string name="sin_cobros">No hay cobros registrados</string>
+    <string name="comienza_cobro">Comienza registrando tu primer cobro</string>
+    <string name="sin_contratos">No hay contratos disponibles</string>
+    <string name="comienza_contrato">Comienza creando tu primer contrato</string>
+
+    <!-- Temas de la aplicación -->
+    <string-array name="temas_app">
+        <item>Sistema</item>
+        <item>Claro</item>
+        <item>Oscuro</item>
+    </string-array>
+</resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="?attr/card_background"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Círculo indicador con corona para mejor préstamo -->
+        <View
+            android:id="@+id/circleIndicator"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circulo_oro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_crown"
+            app:tint="@color/white"
+            app:layout_constraintTop_toTopOf="@id/circleIndicator"
+            app:layout_constraintBottom_toBottomOf="@id/circleIndicator"
+            app:layout_constraintStart_toStartOf="@id/circleIndicator"
+            app:layout_constraintEnd_toEndOf="@id/circleIndicator" />
+
+        <!-- Información del préstamo -->
+        <LinearLayout
+            android:id="@+id/clientLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/circleIndicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Nombre y apellido -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewNombreCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Juan"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter_bold" />
+
+                <TextView
+                    android:id="@+id/textViewApellidoCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pérez"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <!-- Monto -->
+            <TextView
+                android:id="@+id/textViewMontoPrestamo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C$ 5,000.00"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_semibold" />
+        </LinearLayout>
+
+        <!-- Información adicional -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/circleIndicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clientLayout">
+
+            <!-- Ganancias -->
+            <TextView
+                android:id="@+id/textViewGanancias"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ganancias: C$ 600"
+                android:textColor="?attr/text_secondary"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium" />
+
+            <!-- Interés -->
+            <TextView
+                android:id="@+id/textViewInteresPrestamo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Interés: 15%"
+                android:textColor="?attr/text_secondary"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

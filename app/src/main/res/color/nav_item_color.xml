@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color cuando el ítem está seleccionado - blanco para contraste -->
+    <item android:color="@color/white" android:state_checked="true" />
+
+    <!-- Color normal que cambia con el tema del sistema -->
+    <item android:color="?android:attr/textColorPrimary" />
+</selector>

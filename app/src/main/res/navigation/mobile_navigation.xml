@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.cocibolka.elbanquito.ui.inicio.InicioFragment"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_inicio">
+
+        <!-- Acción hacia la lista de préstamos -->
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_prestamos"
+            app:destination="@id/nav_prestamos"
+            app:popUpTo="@id/nav_inicio"
+            app:popUpToInclusive="false" />
+
+        <!-- Acción hacia la lista de cobros -->
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_cobros"
+            app:destination="@id/nav_cobros" />
+
+        <!-- Nueva acción hacia nuevo préstamo -->
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_nuevo_prestamo"
+            app:destination="@id/nav_nuevo_prestamo" />
+
+        <!-- Nueva acción hacia nuevo cliente -->
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_nuevo_cliente"
+            app:destination="@id/nav_nuevo_cliente" />
+
+        <!-- Nueva acción hacia préstamos atrasados (filtrando en préstamos) -->
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_prestamos_atrasados"
+            app:destination="@id/nav_prestamos">
+            <argument
+                android:name="filtro"
+                app:argType="string"
+                android:defaultValue="atrasados" />
+        </action>
+
+        <!-- Nueva acción hacia próximos pagos (puede ser cobros o una nueva vista) -->
+        <action
+            android:id="@+id/action_nav_inicio_to_nav_proximos_pagos"
+            app:destination="@id/nav_cobros">
+            <argument
+                android:name="filtro"
+                app:argType="string"
+                android:defaultValue="proximos" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_clientes"
+        android:name="com.cocibolka.elbanquito.ui.clientes.ClientesFragment"
+        android:label="@string/menu_clientes"
+        tools:layout="@layout/fragment_clientes">
+
+        <!-- Dentro del fragment nav_clientes -->
+        <action
+            android:id="@+id/action_nav_clientes_to_nav_nuevo_prestamo"
+            app:destination="@id/nav_nuevo_prestamo">
+            <argument
+                android:name="clienteId"
+                app:argType="integer"
+                android:defaultValue="0" />
+        </action>
+
+        <action
+            android:id="@+id/action_nav_clientes_to_nav_editar_cliente"
+            app:destination="@id/nav_editar_cliente" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_editar_cliente"
+        android:name="com.cocibolka.elbanquito.ui.clientes.EditarClienteFragment"
+        android:label="Editar Cliente"
+        tools:layout="@layout/fragment_editar_cliente">
+
+        <argument
+            android:name="clienteId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_prestamos"
+        android:name="com.cocibolka.elbanquito.ui.prestamos.PrestamosFragment"
+        android:label="@string/menu_prestamos"
+        tools:layout="@layout/fragment_prestamos">
+
+        <!-- Nuevo argumento para filtrado -->
+        <argument
+            android:name="filtro"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+        <action
+            android:id="@+id/actionPrestamosFragmentToInicioFragment"
+            app:destination="@id/nav_inicio" />
+
+        <action
+            android:id="@+id/action_nav_prestamos_to_nav_editar_prestamos"
+            app:destination="@id/nav_editar_prestamos" />
+
+        <action
+            android:id="@+id/action_nav_prestamos_to_nav_prestamo_pagado"
+            app:destination="@id/nav_prestamo_pagado" />
+
+        <action
+            android:id="@+id/action_nav_prestamos_to_nav_nuevo_prestamo"
+            app:destination="@id/nav_nuevo_prestamo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_prestamo_pagado"
+        android:name="com.cocibolka.elbanquito.ui.prestamos.PrestamoPagadoFragment"
+        android:label="Préstamo Pagado"
+        tools:layout="@layout/fragment_prestamo_pagado">
+
+        <!-- Definimos el argumento para recibir datos -->
+        <argument
+            android:name="prestamo"
+            app:argType="com.cocibolka.elbanquito.models.Prestamos"
+            app:nullable="false" />
+
+        <!-- Definimos el argumento para recibir datos -->
+        <argument
+            android:name="cliente"
+            app:argType="com.cocibolka.elbanquito.models.Clientes"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_nuevo_prestamo"
+        android:name="com.cocibolka.elbanquito.ui.prestamos.NuevoPrestamoFragment"
+        android:label="Nuevo Préstamo"
+        tools:layout="@layout/fragment_nuevo_prestamo">
+        <argument
+            android:name="prestamo"
+            app:argType="com.cocibolka.elbanquito.models.Prestamos"
+            app:nullable="true" />
+        <!-- Añadir este argumento para solucionar el problema -->
+        <argument
+            android:name="clienteId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_navNuevoPrestamo_to_navNuevoCliente"
+            app:destination="@id/nav_nuevo_cliente" />
+
+        <action
+            android:id="@+id/action_navNuevoPrestamo_to_navPrestamos"
+            app:destination="@id/nav_prestamos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_editar_prestamos"
+        android:name="com.cocibolka.elbanquito.ui.prestamos.EditarPrestamoFragment"
+        android:label="Editar Préstamo"
+        tools:layout="@layout/fragment_editar_prestamo">
+
+        <argument
+            android:name="prestamo"
+            app:argType="com.cocibolka.elbanquito.models.Prestamos"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/actionEditarPrestamoFragmentToAbonarCuotaFragment"
+            app:destination="@id/nav_abonar_cuota">
+            <argument
+                android:name="prestamo"
+                app:argType="com.cocibolka.elbanquito.models.Prestamos" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_abonar_cuota"
+        android:name="com.cocibolka.elbanquito.ui.prestamos.AbonarCuotaFragment"
+        android:label="Abonar Cuota"
+        tools:layout="@layout/fragment_abonar_cuota">
+
+        <argument
+            android:name="prestamo"
+            app:argType="com.cocibolka.elbanquito.models.Prestamos"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_cobros"
+        android:name="com.cocibolka.elbanquito.ui.cobros.CobrosFragment"
+        android:label="Cobros"
+        tools:layout="@layout/fragment_cobros">
+
+        <!-- Nuevo argumento para filtrado -->
+        <argument
+            android:name="filtro"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+        <action
+            android:id="@+id/action_cobrosFragment_to_inicioFragment"
+            app:destination="@id/nav_inicio" />
+
+        <action
+            android:id="@+id/action_cobrosFragment_to_editarPrestamoFragment"
+            app:destination="@id/nav_editar_prestamos" />
+
+        <!-- Nueva acción para registrar cobros (enlazando con abonar cuota) -->
+        <action
+            android:id="@+id/action_cobrosFragment_to_abonarCuotaFragment"
+            app:destination="@id/nav_abonar_cuota" />
+
+        <!-- Si quieres tener un fragmento específico para registrar cobros en el futuro
+        <action
+            android:id="@+id/action_cobrosFragment_to_registrarCobroFragment"
+            app:destination="@id/nav_registrar_cobro" />
+        -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_contratos"
+        android:name="com.cocibolka.elbanquito.ui.contratos.ContratosFragment"
+        android:label="@string/menu_contratos"
+        tools:layout="@layout/fragment_contratos" />
+
+    <fragment
+        android:id="@+id/nav_configuracion"
+        android:name="com.cocibolka.elbanquito.ui.configuracion.ConfiguracionFragment"
+        android:label="@string/menu_configuracion"
+        tools:layout="@layout/fragment_configuracion">
+
+        <!-- Acción para navegar al fragmento de Notificaciones -->
+        <action
+            android:id="@+id/action_nav_configuracion_to_notificacionesFragment"
+            app:destination="@id/nav_notificaciones" />
+
+        <action
+            android:id="@+id/action_nav_configuracion_to_copiaSeguridadFragment"
+            app:destination="@id/nav_copia_seguridad" />
+
+        <!-- Acción para navegar al fragmento de Información del Negocio -->
+        <action
+            android:id="@+id/action_nav_configuracion_to_informacionNegocioFragment"
+            app:destination="@id/nav_informacion_negocio" />
+
+        <!-- Navegación al fragmento de Moneda -->
+        <action
+            android:id="@+id/action_nav_configuracion_to_monedaFragment"
+            app:destination="@id/monedaFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/monedaFragment"
+        android:name="com.cocibolka.elbanquito.ui.moneda.MonedaFragment"
+        android:label="Configuración de Moneda"
+        tools:layout="@layout/fragment_moneda" />
+
+
+    <!-- Fragmento de Copia de Seguridad -->
+    <fragment
+        android:id="@+id/nav_copia_seguridad"
+        android:name="com.cocibolka.elbanquito.ui.configuracion.CopiaSeguridadFragment"
+        android:label="Copia de seguridad"
+        tools:layout="@layout/fragment_copia_seguridad" />
+
+    <!-- Fragmento de Notificaciones -->
+    <fragment
+        android:id="@+id/nav_notificaciones"
+        android:name="com.cocibolka.elbanquito.ui.configuracion.NotificacionesFragment"
+        android:label="Notificaciones"
+        tools:layout="@layout/fragment_notificaciones" />
+
+    <!-- Fragmento de Información del Negocio -->
+    <fragment
+        android:id="@+id/nav_informacion_negocio"
+        android:name="com.cocibolka.elbanquito.ui.configuracion.InformacionNegocioFragment"
+        android:label="Información del Negocio"
+        tools:layout="@layout/fragment_informacion_negocio" />
+
+    <fragment
+        android:id="@+id/nav_acerca_de"
+        android:name="com.cocibolka.elbanquito.ui.acercade.AcercaDeFragment"
+        android:label="@string/menu_acerca_de"
+        tools:layout="@layout/fragment_acerca_de" />
+
+    <fragment
+        android:id="@+id/nav_nuevo_cliente"
+        android:name="com.cocibolka.elbanquito.ui.clientes.NuevoClienteFragment"
+        android:label="@string/action_nuevo_cliente"
+        tools:layout="@layout/fragment_nuevo_cliente">
+
+        <argument
+            android:name="fromLoan"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_navNuevoCliente_to_navNuevoPrestamo"
+            app:destination="@id/nav_nuevo_prestamo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.cocibolka.elbanquito.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <!-- Puedes descomentar esta sección si quieres implementar un fragmento específico de registrar cobro
+    <fragment
+        android:id="@+id/nav_registrar_cobro"
+        android:name="com.cocibolka.elbanquito.ui.cobros.RegistrarCobroFragment"
+        android:label="Registrar Cobro"
+        tools:layout="@layout/fragment_registrar_cobro">
+
+        <argument
+            android:name="prestamo"
+            app:argType="com.cocibolka.elbanquito.models.Prestamos"
+            app:nullable="true" />
+    </fragment>
+    -->
+</navigation>

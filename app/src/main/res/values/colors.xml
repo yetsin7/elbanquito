@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores Base -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- Colores Primarios -->
+    <color name="primary_color">#3E5E8A</color>
+    <color name="primary_variant">#2B4570</color>
+    <color name="dark_primary_color">#2A3950</color>
+    <color name="dark_primary_variant">#1A2638</color>
+    <color name="accent_color">#3A86FF</color>
+    <color name="accent_color_2">#FF9E44</color>
+
+
+    <!-- res/values/colors.xml -->
+    <color name="icon_background">#F5F5F7</color>
+    <color name="divider_color">#E5E5EA</color>
+    <color name="chart_line_positive">#34C759</color>
+    <color name="chart_line_negative">#FF3B30</color>
+
+
+    <color name="azul_oscuro">#1A237E</color>
+    <color name="dark_background">#212121</color>
+
+    <color name="nav_item_background_color">#26000000</color>
+
+    <!-- En res/values/colors.xml, agregar estos colores si no existen -->
+    <color name="chart_text">#757575</color>
+    <color name="primary_dark_color">#1976D2</color>
+
+    <!-- Colores de Estados de Préstamos -->
+    <color name="color_activo">#4CAF50</color>
+    <color name="color_pagado">#3A86FF</color>
+    <color name="color_atrasado">#FF5D4F</color>
+
+    <!-- Colores de Éxito/Error -->
+    <color name="success_color">#4CAF50</color>
+    <color name="error_color">#FF5D4F</color>
+
+    <!-- Añade estos colores a tu archivo colors.xml -->
+    <color name="chip_text_unselected_light">#000000</color> <!-- Negro para tema claro -->
+    <color name="chip_text_unselected_dark">#FFFFFF</color>  <!-- Blanco para tema oscuro -->
+
+    <!-- Colores Adicionales para UI -->
+    <color name="warm_grey">#707070</color>
+    <color name="almost_white">#F9F9F9</color>
+    <color name="background_disabled">#E0E0E0</color>
+    <color name="gold">#FFD700</color>
+    <color name="oro">#FFD700</color>
+    <color name="dark_blue">#1E3A5F</color>
+    <color name="steel_blue">#4682B4</color>
+
+    <!-- Colores de Textos para Tema Claro -->
+    <color name="text_primary_light">#333333</color>
+    <color name="text_secondary_light">#757575</color>
+    <color name="hintTextColorLight">#ACACAC</color>
+
+    <!-- Colores de Textos para Tema Oscuro -->
+    <color name="text_primary_dark">#E0E0E0</color>
+    <color name="text_secondary_dark">#A0A0A0</color>
+    <color name="hintTextColorDark">#707070</color>
+
+    <!-- Colores de Fondos para Tema Claro -->
+    <color name="background_color_light">#F5F5F5</color>
+    <color name="card_background_light">#FFFFFF</color>
+    <color name="colorFondoClaroAplicacion">#F5F5F5</color>
+
+    <!-- Colores de Fondos para Tema Oscuro -->
+    <color name="background_color_dark">#202124</color>
+    <color name="card_background_dark">#2D2D30</color>
+    <color name="charcoal">#121212</color>
+
+    <!-- Colores Adicionales -->
+    <color name="light_cream">#FFF4E3</color>
+    <color name="cream_white">#FFFAF0</color>
+    <color name="colorBarraSuperior">#2B4570</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="dark_gray">#555555</color>
+    <color name="chart_line">#4CAF50</color>
+    <color name="chart_fill">#80C4BF3A</color>
+    <color name="chart_grid">#20000000</color>
+
+    <!-- Colores Dinámicos (se asignan en runtime según el tema) -->
+    <color name="background_color">@color/background_color_light</color>
+    <color name="card_background">@color/card_background_light</color>
+    <color name="text_primary">@color/text_primary_light</color>
+    <color name="text_secondary">@color/text_secondary_light</color>
+    <color name="textColorPrimaryLight">@color/text_primary_light</color>
+
+    <!-- Colores para diálogos al estilo PRO -->
+    <color name="dialog_background_light">#FFFFFF</color>
+    <color name="dialog_background_dark">#1C1C1E</color>
+    <color name="error_background_light">#FFF1F0</color>
+    <color name="error_background_dark">#3B1213</color>
+    <color name="error_text_light">#FF3B30</color>
+    <color name="error_text_dark">#FF453A</color>
+
+    <!-- Colores PRO -->
+    <color name="blue">#007AFF</color>
+    <color name="red">#FF3B30</color>
+    <color name="green">#34C759</color>
+    <color name="gray">#8E8E93</color>
+
+    <!-- Colores Dinámicos -->
+    <color name="separator_color">#E5E5E5</color>
+</resources>

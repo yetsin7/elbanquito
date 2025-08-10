@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="?attr/card_background"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp">
+
+        <!-- SECCIÓN 1: ENCABEZADO CON TÍTULO Y MES ANTERIOR -->
+        <TextView
+            android:id="@+id/textViewTitulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Voy ganando:"
+            android:textColor="?attr/text_primary"
+            android:textSize="18sp"
+            android:fontFamily="@font/inter_semibold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/containerMesAnterior" />
+
+        <LinearLayout
+            android:id="@+id/containerMesAnterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textViewTitulo"
+            app:layout_constraintBottom_toBottomOf="@id/textViewTitulo">
+
+            <TextView
+                android:id="@+id/textViewMesPasado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="enero"
+                android:textColor="?attr/text_secondary"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium" />
+
+            <TextView
+                android:id="@+id/textViewGananciasMesPasado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C$ 0.00"
+                android:textColor="?attr/text_primary"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_semibold" />
+        </LinearLayout>
+
+        <!-- SECCIÓN 2: MONTO PRINCIPAL DE GANANCIAS -->
+        <TextView
+            android:id="@+id/textViewGananciasActuales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="C$ 5,000.00"
+            android:textColor="@color/green"
+            android:textSize="34sp"
+            android:fontFamily="@font/inter_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
+
+        <!-- SECCIÓN 3: INDICADORES DE PORCENTAJE Y TENDENCIA -->
+        <LinearLayout
+            android:id="@+id/containerIndicadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewGananciasActuales">
+
+            <!-- Pill de porcentaje -->
+            <TextView
+                android:id="@+id/textViewPorcentajeCambio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+49,89%"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_semibold"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:background="@drawable/badge_background" />
+
+            <!-- Icono de tendencia -->
+            <ImageView
+                android:id="@+id/imageViewTendencia"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_tending_up"
+                android:contentDescription="Tendencia al alza" />
+        </LinearLayout>
+
+        <!-- SECCIÓN 4: SEPARADOR Y BOTÓN DE EXPANDIR -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="?attr/divider_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/containerIndicadores" />
+
+        <!-- Botón mostrar más (CORREGIDO) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMostrarMas"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Mostrar más"
+            app:cornerRadius="24dp"
+            app:backgroundTint="?attr/background_color"
+            app:icon="@drawable/ic_chevron_down"
+            app:iconTint="?attr/text_secondary"
+            app:iconSize="24dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- SECCIÓN 5: CONTENIDO EXPANDIBLE (inicialmente invisible) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contenidoExpandible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/btnMostrarMas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Desglose de ganancias -->
+            <TextView
+                android:id="@+id/labelDesglose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desglose de ganancias"
+                android:textColor="?attr/text_primary"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Cuadrícula de desglose -->
+            <GridLayout
+                android:id="@+id/gridDesglose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/labelDesglose">
+
+                <!-- Fila 1: Intereses -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Intereses"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/textViewIntereses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C$ 4,200.00"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Fila 2: Comisiones -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Comisiones"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/textViewComisiones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C$ 800.00"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Fila 3: Otros ingresos -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Otros ingresos"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular" />
+
+                <TextView
+                    android:id="@+id/textViewOtrosIngresos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C$ 0.00"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_gravity="end" />
+            </GridLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

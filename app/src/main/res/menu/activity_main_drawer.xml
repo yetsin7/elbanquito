@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- NOTA: Usaremos un tamaño de 70x70 en los iconos, son rápidos y buena definición. -->
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_clientes"
+            android:icon="@drawable/ic_client"
+            android:title="@string/menu_clientes" />
+        <item
+            android:id="@+id/nav_prestamos"
+            android:icon="@drawable/ic_loan"
+            android:title="@string/menu_prestamos" />
+        <item
+            android:id="@+id/nav_cobros"
+            android:icon="@drawable/ic_payment"
+            android:title="@string/menu_cobros" />
+        <item
+            android:id="@+id/nav_contratos"
+            android:icon="@drawable/ic_contrato"
+            android:title="@string/menu_contratos" />
+
+        <item
+            android:id="@+id/nav_configuracion"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/menu_configuracion" />
+        <item
+            android:id="@+id/nav_acerca_de"
+            android:icon="@drawable/ic_info"
+            android:title="@string/menu_acerca_de" />
+
+        <item
+            android:id="@+id/nav_eliminar_base_datos"
+            android:icon="@drawable/eliminardb_image"
+            android:title="@string/menu_eliminar_base_datos"/>
+
+    </group>
+</menu>

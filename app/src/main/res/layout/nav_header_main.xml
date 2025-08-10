@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="Información de la empresa"
+    app:cardBackgroundColor="?attr/card_background"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingTop="48dp"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingBottom="24dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <!-- Contenedor del avatar -->
+    <FrameLayout
+        android:id="@+id/avatarContainer"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Foto de perfil -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewFotoPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/blue"
+            android:visibility="gone" />
+
+        <!-- Iniciales -->
+        <TextView
+            android:id="@+id/textViewUserInitial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="NA"
+            android:textSize="20sp"
+            android:background="@drawable/circle_background"
+            android:textColor="?attr/text_primary"
+            android:fontFamily="@font/inter_bold" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewNombreEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nombre de la Empresa"
+        android:contentDescription="Nombre de la Empresa"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="?attr/text_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatarContainer" />
+
+    <TextView
+        android:id="@+id/textViewNombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Nombre y apellido"
+        android:contentDescription="Nombre y apellido del usuario"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_medium"
+        android:textColor="?attr/text_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombreEmpresa" />
+
+    <TextView
+        android:id="@+id/textViewCorreoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="correo@empresa.com"
+        android:contentDescription="Correo de la empresa"
+        android:textSize="14sp"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="?attr/text_primary"
+        android:alpha="0.8"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombreUsuario" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

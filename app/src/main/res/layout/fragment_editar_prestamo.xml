@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.prestamos.EditarPrestamoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Encabezado con título y botón de guardar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+                        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnActualizarPrestamo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="@font/inter_medium"
+                android:paddingHorizontal="16dp"
+                android:text="Guardar"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp" />
+        </RelativeLayout>
+
+        <!-- Sección de Información del Cliente -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="INFORMACIÓN DEL CLIENTE"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Seleccionar Cliente -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Cliente"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textViewClienteId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/gray"
+                        android:focusable="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Nombre y Apellido del Cliente"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Cédula"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textViewCedulaId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="000-000000-0000X"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sección de Detalles del Préstamo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="DETALLES DEL PRÉSTAMO"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Fechas y Montos -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Fecha de Inicio -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Fecha de inicio"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textViewFechaInicio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="00/00/0000"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Fecha Final -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Fecha final"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/editTextFechaFinal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/blue"
+                        android:focusable="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="00/00/0000"
+                        android:textColor="@color/blue"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Monto -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Monto"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textViewMonto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:focusable="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="0.00"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="17sp"
+                        android:minWidth="48dp"
+                        android:gravity="center_vertical|end"
+                        android:paddingHorizontal="16dp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sección de Términos -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="TÉRMINOS"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Plazos e Intereses -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Período de Pago -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Período"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textViewPeriodo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Mensual"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Número de Cuotas -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Cuotas"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextNumeroCuotas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:minWidth="60dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Interés -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Interés"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/textViewInteresMensual"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@null"
+                            android:fontFamily="@font/inter_regular"
+                            android:hint="0"
+                            android:inputType="numberDecimal"
+                            android:minWidth="40dp"
+                            android:textAlignment="textEnd"
+                            android:textColor="?attr/text_secondary"
+                            android:textColorHint="@color/text_secondary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="%"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Prenda -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Prenda"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextPrenda"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="Descripción"
+                        android:inputType="text"
+                        android:minWidth="120dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón Calcular -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Calcular"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:cornerRadius="12dp" />
+
+        <!-- Sección de Resultados -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="RESULTADOS"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Valor de Cuota -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Valor de cuota"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textViewValorCuota"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="0.00"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Ganancias -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Ganancias"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textViewGanancias"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="0.00"
+                        android:textColor="@color/red"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Total a Pagar -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="Total a pagar"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textViewTotalAPagar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="0.00"
+                        android:textColor="@color/green"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botones de Acción -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAbonarCuota"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Abonar"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:cornerRadius="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPagar"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Pagar"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+
+        <!-- Botón Imprimir Contrato -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnImprimirContrato"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Imprimir contrato"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="17sp"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+</ScrollView>

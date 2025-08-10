@@ -1,0 +1,10 @@
+<!-- drawable/check_bold.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="24dp"
+    android:width="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#000000"
+        android:pathData="M10.3,17.4c0.4,0.4 1.02,0.4 1.42,0l6.25,-6.25c0.4,-0.4 0.4,-1.03 0,-1.42 -0.4,-0.4 -1.03,-0.4 -1.42,0l-5.54,5.54 -2.18,-2.18c-0.4,-0.4 -1.03,-0.4 -1.42,0 -0.4,0.4 -0.4,1.02 0,1.42l3.89,3.89z" />
+</vector>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.cobros.CobrosFragment">
+
+    <!-- Título y contador de cobros, estilo San Francisco de PRO -->
+    <TextView
+        android:id="@+id/textViewTituloCobros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/menu_cobros"
+        android:textColor="?attr/text_primary"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewContadorCobros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:text="Todos los cobros"
+        android:textColor="?attr/text_secondary"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloCobros" />
+
+    <!-- Barra de búsqueda con estilo iOS -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSearchBar"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="?attr/card_background"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContadorCobros">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <ImageView
+                android:id="@+id/imageViewBuscar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Ícono de búsqueda"
+                android:src="@drawable/ic_search"
+                app:tint="?attr/text_secondary" />
+
+            <EditText
+                android:id="@+id/editTextBuscarCobros"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Buscar cobros"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColor="?attr/text_primary"
+                android:textColorHint="?attr/text_secondary"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_regular" />
+
+            <ImageView
+                android:id="@+id/btnOrdenarPor"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Botón ordenar por"
+                android:src="@drawable/ic_order_for"
+                app:tint="?attr/text_secondary" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Filtros rápidos con estilo de segmentedControl de iOS -->
+    <HorizontalScrollView
+        android:id="@+id/scrollViewFiltros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewSearchBar">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTodos"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:text="Todos"
+                android:textColor="@color/white"
+                android:fontFamily="@font/inter_medium"
+                app:chipBackgroundColor="@color/blue"
+                app:chipCornerRadius="18dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPendientes"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pendientes"
+                android:textColor="?attr/text_primary"
+                android:fontFamily="@font/inter_medium"
+                app:chipBackgroundColor="?attr/card_background"
+                app:chipCornerRadius="18dp"
+                app:chipStrokeColor="@color/green"
+                app:chipStrokeWidth="1dp" />
+
+            <!-- ELIMINADO EL CHIP ATRASADOS -->
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCompletados"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Completados"
+                android:textColor="?attr/text_primary"
+                android:fontFamily="@font/inter_medium"
+                app:chipBackgroundColor="?attr/card_background"
+                app:chipCornerRadius="18dp"
+                app:chipStrokeColor="@color/blue"
+                app:chipStrokeWidth="1dp" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+    <!-- Lista de cobros con efecto de borde redondeado -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCobros"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:contentDescription="Lista de cobros"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewFiltros" />
+
+
+
+    <!-- Vista vacía cuando no hay cobros -->
+    <LinearLayout
+        android:id="@+id/layoutEstadoVacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:alpha="0.7"
+            android:contentDescription="Ícono de cobro"
+            android:src="@drawable/ic_payment"
+            app:tint="?attr/text_secondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/sin_cobros"
+            android:textColor="?attr/text_primary"
+            android:textSize="22sp"
+            android:fontFamily="@font/inter_bold"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:text="@string/comienza_cobro"
+            android:textColor="?attr/text_secondary"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegistrarCobro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/blue"
+            android:paddingStart="24dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="12dp"
+            android:text="Registrar cobro"
+            android:textAllCaps="false"
+            android:fontFamily="@font/inter_medium"
+            android:textColor="@color/white"
+            app:cornerRadius="24dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

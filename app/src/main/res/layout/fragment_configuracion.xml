@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.configuracion.ConfiguracionFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Sección: Perfil y Negocio -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PERFIL Y NEGOCIO"
+            android:textColor="?attr/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+
+
+        <!-- Agregar esta sección después de "PERFIL Y NEGOCIO" y antes de "NOTIFICACIONES" en fragment_configuracion.xml -->
+
+        <!-- Opción: Configuración de Moneda -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMoneda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_currency"
+                    app:tint="@color/accent_color" />
+
+                <TextView
+                    android:id="@+id/textViewMoneda"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Moneda"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textViewMonedaActual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Córdoba (C$)"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Opción: Información de Negocio -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardInfoNegocio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_info"
+                    app:tint="@color/accent_color" />
+
+                <TextView
+                    android:id="@+id/textViewInformacionNegocio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Información de Negocio"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección: Notificaciones -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOTIFICACIONES"
+            android:textColor="?attr/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Opción: Configuración de Notificaciones -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardNotificaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_notification"
+                    app:tint="@color/accent_color_2" />
+
+                <TextView
+                    android:id="@+id/textViewNotificaciones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Notificaciones"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección: Respaldo y Seguridad -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RESPALDO Y SEGURIDAD"
+            android:textColor="?attr/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Opción: Copia de Seguridad -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCopiaSeguridad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_backup"
+                    app:tint="@color/success_color" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewCopiaSeguridad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Copia de Seguridad"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewUltimaCopia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Última copia: Nunca"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección: Apariencia -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="APARIENCIA"
+            android:textColor="?attr/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Opción: Tema de la Aplicación (REORGANIZADO Y OPTIMIZADO) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_theme"
+                    app:tint="@color/accent_color" />
+
+                <TextView
+                    android:id="@+id/textViewTema"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Tema"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/layoutTemaSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:minWidth="120dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/textViewTemaSeleccionado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sistema"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_chevron_down"
+                        app:tint="@color/text_secondary"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Spinner oculto que maneja la funcionalidad real -->
+                <Spinner
+                    android:id="@+id/spinner_tema"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:minWidth="120dp"
+                    android:popupBackground="@drawable/spinner_dropdown_background"
+                    android:visibility="invisible"
+                    android:spinnerMode="dropdown"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección: Acerca de -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ACERCA DE"
+            android:textColor="?attr/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Opción: Versión de la App -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_info"
+                    app:tint="@color/accent_color_2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Versión de la aplicación"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewVersion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="El Banquito v1.0"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

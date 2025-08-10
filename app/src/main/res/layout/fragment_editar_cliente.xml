@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.clientes.EditarClienteFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Encabezado con título y botón de guardar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnActualizarCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="@font/inter_medium"
+                android:paddingHorizontal="16dp"
+                android:text="Guardar"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp" />
+        </RelativeLayout>
+
+        <!-- Sección de Información Personal -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="INFORMACIÓN PERSONAL"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Nombre y Apellido -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Nombre -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Nombre"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="Nombre"
+                        android:inputType="textPersonName"
+                        android:minWidth="150dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Apellido -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Apellido"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextApellido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="Apellido"
+                        android:inputType="textPersonName"
+                        android:minWidth="150dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sección de Contacto -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="CONTACTO"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Cédula, Teléfono y Correo -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Cédula -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Cédula"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextCedula"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="000-000000-0000X"
+                        android:inputType="textVisiblePassword"
+                        android:maxLength="16"
+                        android:minWidth="150dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Teléfono -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Teléfono"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextTelefono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="0000 0000"
+                        android:inputType="phone"
+                        android:minWidth="150dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Correo Electrónico -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Correo"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextCorreo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="correo@ejemplo.com"
+                        android:inputType="textEmailAddress"
+                        android:minWidth="180dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sección de Dirección -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="DIRECCIÓN"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Dirección -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Dirección Completa -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Dirección"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/editTextDireccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="Ingrese dirección"
+                        android:inputType="textPostalAddress"
+                        android:minWidth="180dp"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/blue"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sección de Género -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="GÉNERO"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Selector de Género -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMasculino"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="?attr/background_color"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Hombre"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue"
+                    app:cornerRadius="24dp"
+                    app:strokeColor="@color/blue"
+                    app:strokeWidth="1dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFemenino"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="?attr/background_color"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Mujer"
+                    android:textAllCaps="false"
+                    android:textColor="@color/red"
+                    app:cornerRadius="24dp"
+                    app:strokeColor="@color/red"
+                    app:strokeWidth="1dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botones de Acción -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGuardarCliente"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Guardar Cliente"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:cornerRadius="12dp" />
+
+        <!-- Botones de Acción Adicionales -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNuevoPrestamo"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Nuevo Préstamo"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:cornerRadius="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVerPrestamos"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Ver Préstamos"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+
+        <!-- Botón Imprimir Información -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnImprimirInfo"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Imprimir información"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="17sp"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+</ScrollView>

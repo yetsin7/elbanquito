@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical">
+
+    <!-- Avatar del cliente -->
+    <View
+        android:id="@+id/clientAvatar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/circulo_azul" />
+
+    <!-- Iniciales del cliente -->
+    <TextView
+        android:id="@+id/textViewIniciales"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:text="NA"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:layout_marginStart="-36dp" />
+
+    <!-- Contenedor de nombre y apellido -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textViewNombreCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textColor="?attr/text_primary"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_medium" />
+
+        <TextView
+            android:id="@+id/textViewApellidoCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellido"
+            android:textColor="?attr/text_primary"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+</LinearLayout>

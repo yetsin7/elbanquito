@@ -1,0 +1,5 @@
+<!-- res/drawable/fondo_boton.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#3F51B5" /> <!-- Asegúrate de que este color sea el que quieres ver -->
+    <corners android:radius="4dp" />
+</shape>

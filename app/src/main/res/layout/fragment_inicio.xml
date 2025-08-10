@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    android:fillViewport="true"
+    tools:context=".ui.inicio.InicioFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="80dp">
+
+        <!-- Header Principal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Contenedor del saludo -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewSaludo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¡Buenos días!"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/inter_bold" />
+
+                <TextView
+                    android:id="@+id/textViewNombreCompleto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="?attr/text_primary"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:visibility="gone"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Avatar -->
+            <FrameLayout
+                android:id="@+id/avatarContainer"
+                android:layout_width="56dp"
+                android:layout_height="56dp">
+
+                <!-- Foto de perfil -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageViewFotoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_user"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="@color/blue"
+                    android:visibility="gone" />
+
+                <!-- Iniciales -->
+                <TextView
+                    android:id="@+id/textViewUserInitial"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="NA"
+                    android:textSize="20sp"
+                    android:background="@drawable/circle_background"
+                    android:textColor="?attr/text_primary"
+                    android:fontFamily="@font/inter_bold"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <!-- Fecha actual -->
+        <TextView
+            android:id="@+id/textViewFechaActual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Hoy, 01 de enero de 2023"
+            android:textColor="?attr/text_secondary"
+            android:textSize="16sp" />
+
+        <!-- Resumen financiero -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewResumenFinanciero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ganancias hasta hoy:"
+                    android:textColor="?attr/text_primary"
+                    android:alpha="0.9"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter_medium" />
+
+                <TextView
+                    android:id="@+id/textViewGananciasHastaHoy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="C$0.00"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/inter_bold"
+                    android:letterSpacing="-0.02" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="20dp"
+                    android:background="@color/white"
+                    android:alpha="0.2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Capital"
+                            android:textColor="?attr/text_primary"
+                            android:alpha="0.9"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_medium" />
+
+                        <TextView
+                            android:id="@+id/textViewCapitalTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="C$0.00"
+                            android:textColor="?attr/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="En circulación"
+                            android:textColor="?attr/text_primary"
+                            android:alpha="0.9"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_medium" />
+
+                        <TextView
+                            android:id="@+id/textViewEnCirculacion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="C$0.00"
+                            android:textColor="?attr/text_primary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Acciones rápidas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:layout_marginBottom="24dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNuevoCliente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/background_color">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_user"
+                            app:tint="@color/green" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Nuevo\nCliente"
+                        android:textAlignment="center"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:lineHeight="18sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNuevoPrestamo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/background_color">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_loan"
+                            app:tint="@color/blue" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Nuevo\nPréstamo"
+                        android:textAlignment="center"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:lineHeight="18sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Estado actual -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="12dp"
+            android:text="ESTADO ACTUAL"
+            android:textColor="?attr/text_secondary"
+            android:textSize="13sp"
+            android:fontFamily="@font/inter_bold"
+            android:letterSpacing="0.04" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:layout_marginBottom="24dp">
+
+            <!-- Préstamos Activos -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPrestamosActivos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@color/color_activo" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Activos"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_medium" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textViewCantidadActivos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="36sp"
+                        android:fontFamily="@font/inter_bold"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Préstamos Atrasados -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPrestamosAtrasados"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="?attr/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@color/color_atrasado" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Atrasados"
+                            android:textColor="?attr/text_secondary"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/inter_medium" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textViewCantidadAtrasados"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="36sp"
+                        android:fontFamily="@font/inter_bold"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Próximos pagos -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProximosPagos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/blue" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="Próximos cobros"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/inter_semibold" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="?attr/text_secondary" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewProximosPagosCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No hay préstamos por cobrar"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/textViewProximosPagosTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C$0.00"
+                        android:textColor="@color/green"
+                        android:textSize="28sp"
+                        android:fontFamily="@font/inter_bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Esta semana"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/inter_medium"
+                        android:background="?attr/background_color"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

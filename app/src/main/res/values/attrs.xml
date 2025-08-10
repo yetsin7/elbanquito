@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Atributos personalizados para los estados de los préstamos -->
+    <attr name="estado_activo" format="boolean" />
+    <attr name="estado_pagado" format="boolean" />
+    <attr name="estado_atrasado" format="boolean" />
+
+    <!-- Atributos para colores dinámicos según el tema -->
+    <attr name="background_color" format="color|reference" />
+    <attr name="card_background" format="color|reference" />
+    <attr name="text_primary" format="color|reference" />
+    <attr name="text_secondary" format="color|reference" />
+    <attr name="divider_color" format="color|reference" />
+    <attr name="icon_tint" format="color|reference" />
+
+
+</resources>

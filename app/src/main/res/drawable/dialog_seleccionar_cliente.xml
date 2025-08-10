@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_warning_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Título del diálogo -->
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Seleccionar Cliente"
+            android:textColor="?attr/text_primary"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_medium" />
+
+        <!-- Subtítulo (opcional) -->
+        <TextView
+            android:id="@+id/dialog_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:gravity="center"
+            android:text="Elige un cliente de la lista"
+            android:textColor="?attr/text_secondary"
+            android:textSize="15sp"
+            android:fontFamily="@font/montserrat"
+            android:visibility="visible" />
+
+        <!-- Barra de búsqueda -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/search_background"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                app:tint="?attr/text_secondary"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Icono de búsqueda" />
+
+            <EditText
+                android:id="@+id/editTextBuscar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Buscar cliente"
+                android:textColorHint="?attr/text_secondary"
+                android:textColor="?attr/text_primary"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <!-- Lista de clientes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewClientes"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:overScrollMode="never"
+            android:clipToPadding="false" />
+
+        <!-- Separador antes de los botones -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/divider_color" />
+
+        <!-- Botones de acción -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Botón Cancelar -->
+            <Button
+                android:id="@+id/buttonCancelar"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:text="Cancelar"
+                android:textColor="?attr/text_secondary"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat" />
+
+            <!-- Separador vertical entre botones -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="?attr/divider_color" />
+
+            <!-- Botón Seleccionar -->
+            <Button
+                android:id="@+id/buttonSeleccionar"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:text="Seleccionar"
+                android:textColor="@color/blue"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_medium" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

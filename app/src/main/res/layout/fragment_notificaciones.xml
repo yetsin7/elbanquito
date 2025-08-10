@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.configuracion.NotificacionesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Título de sección -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="NOTIFICACIONES"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Panel de Configuración General -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Activar todas las notificaciones -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewNotificacionesGlobales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="Activar todas las notificaciones"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchGlobalNotificaciones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Activar todas las notificaciones"
+                        app:thumbTint="@color/white"
+                        app:trackTint="@color/blue" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Título de sección -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="RECORDATORIOS DE PAGOS"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <!-- Panel de Configuración de Recordatorios -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="?attr/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Notificar pagos de la semana -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewNotificacionPagosSemana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Pagos de la semana"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchNotificacionPagosSemana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Notificar pagos de la semana"
+                        app:thumbTint="@color/white"
+                        app:trackTint="@color/blue" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Notificar pagos del mes -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewNotificacionPagosMes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Pagos del mes"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchNotificacionPagosMes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Notificar pagos del mes"
+                        app:thumbTint="@color/white"
+                        app:trackTint="@color/blue" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/separator_color" />
+
+                <!-- Notificar pagos atrasados -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewNotificacionPagosAtrasados"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Pagos atrasados"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="17sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchNotificacionPagosAtrasados"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Notificar pagos atrasados"
+                        app:thumbTint="@color/white"
+                        app:trackTint="@color/red" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Texto de información -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Las notificaciones te ayudarán a mantener al día tus cobros y evitar pagos atrasados."
+            android:textColor="?attr/text_secondary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</ScrollView>

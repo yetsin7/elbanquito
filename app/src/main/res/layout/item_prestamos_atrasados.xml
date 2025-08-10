@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="16dp"
+    app:cardBackgroundColor="?attr/card_background"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Círculo indicador -->
+        <View
+            android:id="@+id/circleIndicator"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circulo_rojo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvGananciasPrestamosAtrasados" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C$"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_bold"
+            app:layout_constraintTop_toTopOf="@id/circleIndicator"
+            app:layout_constraintBottom_toBottomOf="@id/circleIndicator"
+            app:layout_constraintStart_toStartOf="@id/circleIndicator"
+            app:layout_constraintEnd_toEndOf="@id/circleIndicator" />
+
+        <!-- Título y valor -->
+        <TextView
+            android:id="@+id/tvPrestamosAtrasados"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Préstamos atrasados"
+            android:textColor="?attr/text_primary"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_semibold"
+            app:layout_constraintStart_toEndOf="@id/circleIndicator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvNumeroPrestamosAtrasados" />
+
+        <TextView
+            android:id="@+id/tvNumeroPrestamosAtrasados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textColor="?attr/text_primary"
+            android:textSize="18sp"
+            android:fontFamily="@font/inter_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPrestamosAtrasados"
+            app:layout_constraintBottom_toBottomOf="@id/tvPrestamosAtrasados" />
+
+        <!-- Subtítulo y valor -->
+        <TextView
+            android:id="@+id/labelPerdidas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Pérdidas"
+            android:textColor="?attr/text_secondary"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_regular"
+            app:layout_constraintStart_toEndOf="@id/circleIndicator"
+            app:layout_constraintTop_toBottomOf="@id/tvPrestamosAtrasados" />
+
+        <TextView
+            android:id="@+id/tvGananciasPrestamosAtrasados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C$ 8,000.00"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/labelPerdidas"
+            app:layout_constraintBottom_toBottomOf="@id/labelPerdidas" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

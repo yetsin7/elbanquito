@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Rutas internas de la app - No requieren permisos -->
+    <files-path name="internal_files" path="." />
+    <files-path name="backups" path="backups/" />
+    <cache-path name="cache" path="." />
+
+    <!-- Para compartir archivos temporales -->
+    <cache-path name="shared_temp" path="temp/" />
+
+
+</paths>

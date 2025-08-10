@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="?attr/card_background"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Vista compacta (siempre visible) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="12dp">
+
+            <!-- Indicador de estado y número de préstamo en la misma línea -->
+            <View
+                android:id="@+id/indicatorStatus"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/indicador_activo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNumeroPrestamo" />
+
+            <TextView
+                android:id="@+id/textViewNumeroPrestamo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="#001"
+                android:textColor="?attr/text_primary"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_semibold"
+                app:layout_constraintStart_toEndOf="@+id/indicatorStatus"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Fechas alineadas a la derecha -->
+            <TextView
+                android:id="@+id/textViewFechaInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01/05/2025"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintEnd_toStartOf="@+id/textViewFechaSeparator"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewFechaSeparator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" - "
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintEnd_toStartOf="@+id/textViewFechaFinal"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewFechaFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="31/05/2025"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Nombre del cliente -->
+            <TextView
+                android:id="@+id/textViewNombreCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jorge"
+                android:textColor="?attr/text_primary"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNumeroPrestamo" />
+
+            <TextView
+                android:id="@+id/textViewApellidoCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Amezcua"
+                android:textColor="?attr/text_primary"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_bold"
+                app:layout_constraintStart_toEndOf="@+id/textViewNombreCliente"
+                app:layout_constraintTop_toTopOf="@+id/textViewNombreCliente" />
+
+            <!-- Monto del préstamo alineado a la derecha -->
+            <TextView
+                android:id="@+id/textViewMontoPrestamo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C$3,650.00"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewNombreCliente" />
+
+            <!-- Botón para expandir/colapsar -->
+            <ImageView
+                android:id="@+id/btnExpandCollapse"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_chevron_down"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMontoPrestamo"
+                app:tint="?attr/text_secondary" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Detalles expandibles (inicialmente ocultos) -->
+        <LinearLayout
+            android:id="@+id/expandableDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Línea divisoria -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/divider_color"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Información del cliente -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <!-- Cédula del cliente -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cédula:"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_medium"/>
+
+                    <TextView
+                        android:id="@+id/textViewCedulaCliente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="001-020202-0000A"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Detalles del préstamo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <!-- Cuotas -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cuotas:"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_medium"/>
+
+                    <TextView
+                        android:id="@+id/textViewCuotas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Interés -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Interés:"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_medium"/>
+
+                    <TextView
+                        android:id="@+id/textViewInteresPrestamo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10% Mensual"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Información adicional del contrato -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estado:"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_medium"/>
+
+                <TextView
+                    android:id="@+id/textViewEstadoContrato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vigente"
+                    android:textColor="@color/green"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Dirección del cliente -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dirección:"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_medium"/>
+
+                <TextView
+                    android:id="@+id/textViewDireccionCliente"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Managua, Nicaragua"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Teléfono del cliente -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teléfono:"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_medium"/>
+
+                <TextView
+                    android:id="@+id/textViewTelefonoCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8888 8888"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Botones de acción -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnImprimirContrato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="IMPRIMIR"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/inter_bold"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.03"
+                    android:paddingHorizontal="24dp"
+                    app:cornerRadius="24dp"
+                    app:backgroundTint="@color/blue"
+                    app:icon="@drawable/ic_print"
+                    app:iconTint="@color/white"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="16dp"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEliminarContrato"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:cornerRadius="24dp"
+                    app:backgroundTint="@color/red"
+                    app:icon="@drawable/ic_delete"
+                    app:iconTint="@color/white"
+                    app:iconSize="20dp"
+                    app:iconPadding="0dp"
+                    android:contentDescription="Eliminar contrato"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

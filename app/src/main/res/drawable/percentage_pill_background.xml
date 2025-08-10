@@ -1,0 +1,12 @@
+<!-- percentage_pill_background (item_ganancias_hasta_hoy.xml) -->
+<!-- Fondo tipo píldora para porcentajes estilo PRO -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#E0F7FA" />
+    <corners android:radius="16dp" />
+    <padding
+        android:left="8dp"
+        android:right="8dp"
+        android:top="4dp"
+        android:bottom="4dp" />
+</shape>

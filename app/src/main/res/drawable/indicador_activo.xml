@@ -1,0 +1,8 @@
+<!-- drawable/indicador_activo.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/color_activo" />
+    <size
+        android:width="12dp"
+        android:height="12dp" />
+</shape>

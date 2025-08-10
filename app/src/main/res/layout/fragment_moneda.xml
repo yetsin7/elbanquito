@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".ui.moneda.MonedaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Configuración de Moneda"
+            android:textColor="?attr/text_primary"
+            android:textSize="24sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Sección: Moneda Actual -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MONEDA ACTUAL"
+            android:textColor="?attr/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/imageViewMonedaActual"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_currency"
+                    app:tint="@color/accent_color" />
+
+                <TextView
+                    android:id="@+id/textViewMonedaActual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Córdoba (C$)"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="?attr/text_primary"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección: Seleccionar Moneda -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SELECCIONAR MONEDA"
+            android:textColor="?attr/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Opción: Córdoba -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCordoba"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Córdoba (C$)"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Moneda base"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/checkCordoba"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_check"
+                    app:tint="@color/success_color"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Opción: Dólar -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDolar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dólar ($)"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewTasaDolar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 USD = C$36.50"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/checkDolar"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_check"
+                    app:tint="@color/success_color"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Opción: Euro -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEuro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Euro (€)"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="?attr/text_primary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewTasaEuro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 EUR = C$39.80"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="?attr/text_secondary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/checkEuro"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_check"
+                    app:tint="@color/success_color"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sección: Información de Tasas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="INFORMACIÓN DE TASAS"
+                android:textColor="?attr/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginStart="4dp"/>
+
+            <!-- Botón actualizar tasas -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonActualizarTasas"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Actualizar"
+                android:textSize="12sp"
+                style="@style/Widget.Material3.Button.TextButton"
+                app:icon="@drawable/ic_refresh"
+                app:iconSize="16dp"
+                app:iconTint="@color/accent_color"
+                android:textColor="@color/accent_color" />
+        </LinearLayout>
+
+        <!-- Card de información de tasas -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="?attr/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textViewUltimaActualizacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Última actualización: Nunca"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Las tasas se actualizan automáticamente cada 6 horas."
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="?attr/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Nota sobre cambio de moneda -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nota: El cambio de moneda afectará a cómo se muestran los importes en toda la aplicación. Los valores se convertirán utilizando la tasa de cambio actual."
+            android:textColor="?attr/text_secondary"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"/>
+
+    </LinearLayout>
+</ScrollView>
